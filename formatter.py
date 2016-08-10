@@ -1,4 +1,5 @@
 import json
+import random
 
 data = json.load(open('dashboard.json'))
 
@@ -17,7 +18,7 @@ json.dump(
     {
         'item': total_ideas,
         'min': {'value': 0},
-        'max': {'value': (total_ideas * 2)}
+        'max': {'value': (total_ideas * random.uniform(1, 3))},
     },
     open('idea_gekometer.json', 'w+')
 )
@@ -26,7 +27,7 @@ json.dump(
     {
         'item': total_challenges,
         'min': {'value': 0},
-        'max': {'value': (total_challenges * 2)}
+        'max': {'value': (total_challenges * random.uniform(1, 3))}
     },
     open('challenge_gekometer.json', 'w+')
 )
@@ -35,7 +36,7 @@ json.dump(
     {
         'item': total_users,
         'min': {'value': 0},
-        'max': {'value': (total_users * 2)}
+        'max': {'value': (total_users * random.uniform(1, 3))}
     },
     open('user_gekometer.json', 'w+')
 )
